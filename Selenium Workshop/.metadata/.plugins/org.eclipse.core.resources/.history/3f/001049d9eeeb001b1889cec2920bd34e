@@ -1,0 +1,41 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver",
+							"C:\\Users\\eduardo.estrada\\Downloads\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("http://demo.automationtesting.in/Register.html");
+		writeToInputs(driver, "//text[@placeholder='Full Name']", "Adrian");
+		
+		
+		try {
+			Thread.sleep(200);
+		} 
+		catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		driver.quit();
+	}
+	
+	// Good practice
+	public static void writeToInputs(WebDriver driver, String xPath, String textInput) {
+	WebElement element;
+
+	try {
+	element = driver.findElement(By.xpath(xPath));
+	element.sendKeys(textInput);
+	} catch (Exception e) {
+	System.out.println("Element not found... ");
+	driver.quit();
+	}
+
+	}
+
+}
