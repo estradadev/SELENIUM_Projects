@@ -1,0 +1,19 @@
+
+public class Test1 {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//System.out.println("Hello World");
+		//indicamos la direccin del chromedriver, el driver para abrir un navegador Crhome
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\eduardo.estrada\\Documents\\Selenium\\chromedriver_win32\\chromedriver.exe");//levantamos el servidor
+		
+		//Obciones de ejecución de chrome, caracteristicas a traves de banderas
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--start-maximized");
+	
+	
+	
+	}
+
+}
