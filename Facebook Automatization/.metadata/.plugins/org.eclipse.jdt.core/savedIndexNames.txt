@@ -1,0 +1,10 @@
+INDEX VERSION 1.131+C:\Users\eduardo.estrada\Documents\UDEMY\Selenium WebDriver with Java\Facebook Automatization\.metadata\.plugins\org.eclipse.jdt.core
+2599344397.index
+1361061859.index
+3668814460.index
+3060588532.index
+4101574405.index
+2216780538.index
+3853480837.index
+714886962.index
+1905243467.index
