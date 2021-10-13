@@ -17,15 +17,45 @@ public class LoginPage {
     By login = By.cssSelector("input[type='submit']");
 
     public WebElement getEmail(){
-        return driver.findElement(email);
+
+        try {
+            return driver.findElement(email);
+        }
+        catch (Exception e) {
+            System.out.println("CSS not found " + email);
+            System.out.println(e);
+            driver.quit();
+            return driver.findElement(email);
+        }
+
     }
 
     public WebElement getPassword(){
-        return driver.findElement(password);
+
+        try {
+            return driver.findElement(password);
+        }
+        catch (Exception e) {
+            System.out.println("CSS not found " + password);
+            System.out.println(e);
+            driver.quit();
+            return driver.findElement(password);
+        }
+
     }
 
     public WebElement getLogin(){
-        return driver.findElement(login);
+
+        try {
+            return driver.findElement(login);
+        }
+        catch (Exception e) {
+            System.out.println("CSS not found " + login);
+            System.out.println(e);
+            driver.quit();
+            return driver.findElement(login);
+        }
+
     }
 
 }

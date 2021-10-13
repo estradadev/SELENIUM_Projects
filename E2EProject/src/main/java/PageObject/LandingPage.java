@@ -16,17 +16,44 @@ public class LandingPage {
     By title = By.cssSelector(".text-center>h2");
     By navBar = By.cssSelector(".nav.navbar-nav.navbar-right>li>a");
 
-
     public WebElement getLogin(){
-        return driver.findElement(signin);
+
+        try {
+            return driver.findElement(signin);
+        }
+        catch (Exception e) {
+            System.out.println("CSS not found " + signin);
+            System.out.println(e);
+            driver.quit();
+            return driver.findElement(signin);
+        }
+
     }
 
     public WebElement getTitle(){
-        return driver.findElement(title);
+        try {
+            return driver.findElement(title);
+        }
+        catch (Exception e) {
+            System.out.println("CSS not found " + title);
+            System.out.println(e);
+            driver.quit();
+            return driver.findElement(title);
+        }
+
     }
 
     public WebElement getNavigationBar(){
-        return driver.findElement(navBar);
+        try {
+            return driver.findElement(navBar);
+        }
+        catch (Exception e) {
+            System.out.println("CSS not found " + navBar);
+            System.out.println(e);
+            driver.quit();
+            return driver.findElement(navBar);
+        }
+
     }
 
 }

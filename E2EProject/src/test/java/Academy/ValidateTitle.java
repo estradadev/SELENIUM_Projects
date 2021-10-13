@@ -4,6 +4,8 @@ import PageObject.LandingPage;
 import PageObject.LoginPage;
 import Resources.Base;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -11,11 +13,17 @@ import java.io.IOException;
 
 public class ValidateTitle extends Base {
 
-    @Test
-    public void basePageNavigation() throws IOException {
-
+    @BeforeTest
+    public void initialize() throws IOException {
         driver = initializeDriver();
         driver.get(prop.getProperty("homeUrl"));
+    }
+
+    @Test
+    public void basePageNavigation() throws IOException {
+        /*
+        driver = initializeDriver();
+        driver.get(prop.getProperty("homeUrl"));*/
 
         //Home Page
         LandingPage lp = new LandingPage(driver);
@@ -25,6 +33,11 @@ public class ValidateTitle extends Base {
 
 
         waitForQuit(500);
+    }
+
+    @AfterTest
+    public void teardown(){
+        driver.quit();
     }
 
 }

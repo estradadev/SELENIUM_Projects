@@ -3,12 +3,20 @@ package Academy;
 import PageObject.LandingPage;
 import PageObject.LoginPage;
 import Resources.Base;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
 public class HomePage extends Base {
+    /*
+    @BeforeTest
+    public void initialize() throws IOException {
+        driver = initializeDriver();
+        driver.get(prop.getProperty("homeUrl"));
+    }*/
 
     @Test(dataProvider = "getData")
     public void basePageNavigation(String email, String password, String text) throws IOException {
@@ -49,6 +57,11 @@ public class HomePage extends Base {
         data[1][2]="Restricted User";
 
         return data;
+    }
+
+    @AfterTest
+    public void teardown(){
+        driver.quit();
     }
 
 }
