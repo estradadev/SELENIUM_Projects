@@ -9,14 +9,21 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.IOException;
 
 public class ValidateTitle extends Base {
 
+    public static Logger log = LogManager.getLogger(Base.class.getName());
+
     @BeforeTest
     public void initialize() throws IOException {
         driver = initializeDriver();
+        log.info("Driver is initialized");
         driver.get(prop.getProperty("homeUrl"));
+        log.info("Navigated to Home page");
     }
 
     @Test
@@ -29,6 +36,7 @@ public class ValidateTitle extends Base {
         LandingPage lp = new LandingPage(driver);
         //comapare the text from the browser with actual text
         Assert.assertEquals(lp.getTitle().getText(),"FEATURED COURSES");
+        log.info("Successfully validated Text message");
         System.out.println(lp.getTitle().getText());
 
 

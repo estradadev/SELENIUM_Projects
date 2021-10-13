@@ -3,6 +3,8 @@ package Academy;
 import PageObject.LandingPage;
 import PageObject.LoginPage;
 import Resources.Base;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -11,12 +13,16 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class HomePage extends Base {
+
+    public static Logger log = LogManager.getLogger(Base.class.getName());
+
     /*
     @BeforeTest
     public void initialize() throws IOException {
         driver = initializeDriver();
         driver.get(prop.getProperty("homeUrl"));
     }*/
+    //We can´t use the last function because the test case run 2 times
 
     @Test(dataProvider = "getData")
     public void basePageNavigation(String email, String password, String text) throws IOException {
@@ -34,7 +40,7 @@ public class HomePage extends Base {
         lip.getPassword().sendKeys(password);
         System.out.println(text);
         lip.getLogin().click();
-
+        log.info(text);
 
         waitForQuit(500);
     }
