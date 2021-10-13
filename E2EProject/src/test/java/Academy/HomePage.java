@@ -5,6 +5,7 @@ import PageObject.LoginPage;
 import Resources.Base;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -14,13 +15,13 @@ import java.io.IOException;
 
 public class HomePage extends Base {
 
+    public WebDriver driver;
     public static Logger log = LogManager.getLogger(Base.class.getName());
-
     /*
     @BeforeTest
     public void initialize() throws IOException {
         driver = initializeDriver();
-        driver.get(prop.getProperty("homeUrl"));
+        //driver.get(prop.getProperty("homeUrl"));
     }*/
     //We can´t use the last function because the test case run 2 times
 

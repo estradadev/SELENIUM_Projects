@@ -1,6 +1,7 @@
-15:10:18.118 [main] INFO  Resources.Base - Driver is initialized
-15:10:21.965 [main] INFO  Resources.Base - Navigated to Home page
-15:10:30.444 [main] INFO  Resources.Base - Non restricted User
-15:10:39.453 [main] INFO  Resources.Base - Restricted User
-15:10:40.680 [main] INFO  Resources.Base - Navigation Bar is displayed
-15:10:41.908 [main] INFO  Resources.Base - Successfully validated Text message
+16:28:42.880 [main] INFO  Resources.Base - Successfully validated Text message
+16:32:34.550 [TestNG-tests-4] INFO  Resources.Base - Driver is initialized
+16:32:37.964 [TestNG-tests-4] INFO  Resources.Base - Navigated to Home page
+16:32:38.029 [TestNG-tests-4] INFO  Resources.Base - Successfully validated Text message
+16:32:38.777 [TestNG-tests-3] INFO  Resources.Base - Navigation Bar is displayed
+16:32:41.507 [TestNG-tests-2] INFO  Resources.Base - Non restricted User
+16:32:50.391 [TestNG-tests-2] INFO  Resources.Base - Restricted User

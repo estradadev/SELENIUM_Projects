@@ -3,6 +3,7 @@ package Academy;
 import PageObject.LandingPage;
 import PageObject.LoginPage;
 import Resources.Base;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -16,6 +17,7 @@ import java.io.IOException;
 
 public class ValidateTitle extends Base {
 
+    public WebDriver driver;//When we execute test cases in parallel we need to use different drivers
     public static Logger log = LogManager.getLogger(Base.class.getName());
 
     @BeforeTest
