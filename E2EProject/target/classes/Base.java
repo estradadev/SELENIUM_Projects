@@ -1,15 +1,23 @@
 package Resources;
 
+//import org.apache.logging.log4j.core.util.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.*;
+import org.apache.commons.io.FileUtils.*;
+//import org.apache.commons.io.FileUtils.copyFile;
 
 public class Base {
 
@@ -51,6 +59,15 @@ public class Base {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return driver;
+
+    }
+
+    public void getScreenShotPath(String testMethodName, WebDriver driver) throws IOException {
+
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        String destinationFile = System.getProperty("user.dir") + "\\Reports\\" + testMethodName + ".png";
+        FileUtils.copyFile(source, new File(destinationFile));
 
     }
 
