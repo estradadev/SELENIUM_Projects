@@ -16,17 +16,21 @@ public class LandingPage {
     By title = By.cssSelector(".text-center>h2");
     By navBar = By.cssSelector(".nav.navbar-nav.navbar-right>li>a");
 
-    public WebElement getLogin(){
+    public LoginPage getLogin(){
 
         try {
-            return driver.findElement(signin);
+            driver.findElement(signin).click();
+
         }
         catch (Exception e) {
             System.out.println("CSS not found " + signin);
             System.out.println(e);
             driver.quit();
-            return driver.findElement(signin);
+            //return driver.findElement(signin);
         }
+
+        LoginPage lip = new LoginPage(driver);
+        return lip;
 
     }
 

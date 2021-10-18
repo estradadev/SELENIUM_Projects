@@ -1,5 +1,6 @@
 package Academy;
 
+import PageObject.ForgotPassword;
 import PageObject.LandingPage;
 import PageObject.LoginPage;
 import Resources.Base;
@@ -33,15 +34,22 @@ public class HomePage extends Base {
 
         //Home Page
         LandingPage lp = new LandingPage(driver);
-        lp.getLogin().click();
+        LoginPage lip = lp.getLogin();
 
         //Login Page
-        LoginPage lip = new LoginPage(driver);
+        // LoginPage lip = new LoginPage(driver);
         lip.getEmail().sendKeys(email);
         lip.getPassword().sendKeys(password);
         System.out.println(text);
-        lip.getLogin().click();
+
         log.info(text);
+
+        lip.getLogin().click();
+
+        //Recover password
+        ForgotPassword fp = lip.forgotPassword();
+        fp.getEmail().sendKeys("dfjalak@dsk.com");
+        fp.sendMeInstructions().click();
 
         waitForQuit(500);
     }

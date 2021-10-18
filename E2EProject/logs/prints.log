@@ -3,3 +3,5 @@
 10:43:34.026 [TestNG-tests-3] INFO  Resources.Base - Navigation Bar is displayed
 10:43:36.854 [TestNG-tests-2] INFO  Resources.Base - Non restricted User
 10:43:46.854 [TestNG-tests-2] INFO  Resources.Base - Restricted User
+11:56:21.886 [main] INFO  Resources.Base - Non restricted User
+11:56:37.089 [main] INFO  Resources.Base - Restricted User
