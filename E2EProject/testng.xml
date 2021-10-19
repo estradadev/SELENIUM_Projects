@@ -35,7 +35,8 @@
         <classes>
             <class name="Academy.ValidateTitle">
                 <methods>
-                    <include name="basePageNavigation"/>
+                    <include name="validateTitle"/>
+                    <include name="validateHeader"/>
                 </methods>
             </class>
         </classes>

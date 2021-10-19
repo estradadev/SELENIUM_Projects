@@ -19,6 +19,7 @@ public class ValidateTitle extends Base {
 
     public WebDriver driver;//When we execute test cases in parallel we need to use different drivers
     public static Logger log = LogManager.getLogger(Base.class.getName());
+    LandingPage lp;
 
     @BeforeTest
     public void initialize() throws IOException {
@@ -29,13 +30,13 @@ public class ValidateTitle extends Base {
     }
 
     @Test
-    public void basePageNavigation() throws IOException {
+    public void validateTitle() throws IOException {
         /*
         driver = initializeDriver();
         driver.get(prop.getProperty("homeUrl"));*/
 
         //Home Page
-        LandingPage lp = new LandingPage(driver);
+        lp = new LandingPage(driver);
         //comapare the text from the browser with actual text
         Assert.assertEquals(lp.getTitle().getText(),"FEATURED COU123RSES");
         log.info("Successfully validated Text message");
@@ -43,6 +44,13 @@ public class ValidateTitle extends Base {
 
 
         waitForQuit(500);
+    }
+
+    @Test
+    public void validateHeader() throws IOException {
+
+        Assert.assertEquals(lp.getHeader().getText(),"AN ACADEMY TO LEARN EVERYTHING ABOUT TESTING");
+
     }
 
     @AfterTest

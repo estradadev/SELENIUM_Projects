@@ -9,14 +9,11 @@ public class LandingPage {
 	
 	public WebDriver driver;
 	
-	By signin=By.cssSelector("a[href*='sign_in']");
-	By title=By.cssSelector(".text-center>h2");
-	By NavBar=By.cssSelector(".nav.navbar-nav.navbar-right>li>a");
-	
-	
-	
-	
-	
+	private By signin=By.cssSelector("a[href*='sign_in']");
+	private By title=By.cssSelector(".text-center>h2");
+	private By NavBar=By.cssSelector(".nav.navbar-nav.navbar-right>li>a");
+	private By header = By.cssSelector("div[class*='video-banner'] h3");
+
 	public LandingPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		
@@ -24,18 +21,12 @@ public class LandingPage {
 		
 	}
 
-
-
-
 	public LoginPage getLogin()
 	{
 		 driver.findElement(signin).click();
 		 LoginPage lp=new LoginPage(driver);
 		 return lp;
-		 
-		 
-		 
-		 
+
 	}
 	public WebElement getNavigationBar()
 	{
@@ -45,7 +36,10 @@ public class LandingPage {
 	{
 		return driver.findElement(title);
 	}
-	
-	
+
+	public WebElement getHeader()
+	{
+		return driver.findElement(header);
+	}
 	
 }

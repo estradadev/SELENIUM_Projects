@@ -12,10 +12,10 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    By email = By.cssSelector("input[id='user_email']");
-    By password = By.cssSelector("input[id='user_password']");
-    By login = By.cssSelector("input[type='submit']");
-    By forgotPassword = By.cssSelector(".link-below-button");
+    private By email = By.cssSelector("input[id='user_email']");
+    private By password = By.cssSelector("input[id='user_password']");
+    private By login = By.cssSelector("input[type='submit']");
+    private By forgotPassword = By.cssSelector(".link-below-button");
 
     public WebElement getEmail(){
 

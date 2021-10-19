@@ -26,27 +26,35 @@ public class Base {
     public WebDriver initializeDriver() throws IOException {
 
         prop = new Properties();
-        FileInputStream fis = new FileInputStream("C:\\Users\\eadri\\Documents\\SELENIUM_Projects\\E2EProject\\src\\main\\java\\Resources\\data.properties");
+        //System.getProperty("user.dir");
+        FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\Resources\\data.properties");
+        //FileInputStream fis = new FileInputStream("C:\\Users\\eadri\\Documents\\SELENIUM_Projects\\E2EProject\\src\\main\\java\\Resources\\data.properties");
 
         prop.load(fis);
+        //mvn test -Dbrowser=chrome
+        //String browserName = System.getProperty("browser");
         String browserName = prop.getProperty("browser");
 
         switch (browserName){
             case "chrome":
                 System.out.println("Execute in chrome driver");
-                System.setProperty("webdriver.chrome.driver","C:\\Users\\eadri\\Documents\\SELENIUM_Projects\\chromedriver_win32\\chromedriver.exe");
+                //System.setProperty("webdriver.chrome.driver","C:\\Users\\eadri\\Documents\\SELENIUM_Projects\\chromedriver_win32\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "\\src\\main\\java\\Resources\\chromedriver.exe");
                 ChromeOptions optionsChrome = new ChromeOptions();
                 optionsChrome.addArguments("--start-maximized");
+                //optionsChrome.addArguments("--headless");//run the tests without opening the browser
                 driver = new ChromeDriver(optionsChrome);
                 break;
             case "firefox":
                 System.out.println("Execute in firefox driver");
-                System.setProperty("webdriver.gecko.driver","C:\\Users\\eadri\\Documents\\SELENIUM_Projects\\geckodriver-v0.30.0-win32\\geckodriver.exe");
+                //System.setProperty("webdriver.gecko.driver","C:\\Users\\eadri\\Documents\\SELENIUM_Projects\\geckodriver-v0.30.0-win32\\geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver",System.getProperty("user.dir") + "\\src\\main\\java\\Resources\\geckodriver.exe");
                 driver = new FirefoxDriver();
                 break;
             case "edge":
                 System.out.println("Execute in IE driver");
-                System.setProperty("webdriver.msedge.driver","C:\\Users\\eadri\\Documents\\SELENIUM_Projects\\edgedriver_win32\\msedgedriver.exe");
+                //System.setProperty("webdriver.msedge.driver","C:\\Users\\eadri\\Documents\\SELENIUM_Projects\\edgedriver_win32\\msedgedriver.exe");
+                System.setProperty("webdriver.msedge.driver",System.getProperty("user.dir") + "\\src\\main\\java\\Resources\\msedgedriver.exe");
                 driver = new EdgeDriver();
                 break;
             default:

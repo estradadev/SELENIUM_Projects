@@ -12,8 +12,8 @@ public class ForgotPassword {
         this.driver = driver;
     }
 
-    By email = By.cssSelector("input[id='user_email']");
-    By sendMeInstructions = By.cssSelector("input[name='commit']");
+    private By email = By.cssSelector("input[id='user_email']");
+    private By sendMeInstructions = By.cssSelector("input[name='commit']");
 
     public WebElement getEmail(){
 
